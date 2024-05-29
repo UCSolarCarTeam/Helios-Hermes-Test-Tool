@@ -23,7 +23,7 @@ public:
     Q_PROPERTY(int m1BusVoltage READ m1BusVoltage NOTIFY m1BusVoltageChanged)
     Q_PROPERTY(int m1VehicleVelocity READ m1VehicleVelocity NOTIFY m1VehicleVelocityChanged)
 
-    Q_PROPERTY(QString byteStreamStr READ byteStreamStr NOTIFY byteStreamChangedStr)
+    Q_PROPERTY(QString byteStreamStr READ byteStreamStr NOTIFY byteStreamStrChanged)
     Q_PROPERTY(QString encodedByteStreamStr READ encodedByteStreamStr NOTIFY encodedByteStreamStrChanged FINAL)
 
     bool m0Alive() const;
