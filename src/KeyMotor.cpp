@@ -143,7 +143,7 @@ void KeyMotor::updateByteStream(){
     byteStream_[45] = checksum.at(1);
     encodedByteStream_ = Util::encodeByteStream(byteStream_);
     emit encodedByteStreamStrChanged();
-    emit byteStreamChangedStr();
+    emit byteStreamStrChanged();
 }
 
 QString KeyMotor::encodedByteStreamStr() const {

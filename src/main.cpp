@@ -11,6 +11,7 @@
 #include "import_qml_plugins.h"
 
 #include "./SerialPortForwarder.h"
+#include "MotorFaults.h"
 #include "lights.h"
 #include "DriverControls.h"
 
@@ -21,6 +22,9 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
+    MotorFaults motorFaults;
+    engine.rootContext()->setContextProperty("motorFaults", &motorFaults);
 
     Lights lights;
     engine.rootContext()->setContextProperty("lights", &lights);
@@ -49,8 +53,9 @@ int main(int argc, char *argv[])
 
     QTimer timer;
     bool firstRun = true;
-    QObject::connect(&timer, &QTimer::timeout, [&forwarder, &lights, &driverControls]() {
+    QObject::connect(&timer, &QTimer::timeout, [&forwarder, &motorFaults, &lights, &driverControls]() {
 
+        forwarder.forwardData(motorFaults.encodedByteStream());
         forwarder.forwardData(lights.encodedByteStream());
         forwarder.forwardData(driverControls.encodedByteStream());
         // forwarder.forwardData(driverControls.byteStream());
