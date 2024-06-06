@@ -37,6 +37,12 @@ Rectangle {
         y: 0
     }
 
+    KeyMotorView {
+        id: keyMotorView
+        x: 8
+        y: 606
+    }
+
     states: [
         State {
             name: "clicked"

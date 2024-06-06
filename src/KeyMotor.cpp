@@ -21,7 +21,7 @@ KeyMotor::KeyMotor(QObject *parent)
 {
     byteStream_.fill(0x00, 47); // packet size 47 - fill zeros by defualt
     byteStream_[0] = 0x2F;      // packet size 47
-    byteStream_[1] = 0x00;      // packet ID (0)
+    byteStream_[1] = 0x01;      // packet ID (1)
 
     updateByteStream();         //generate checksum and encode empty packet
 }
@@ -143,7 +143,7 @@ void KeyMotor::updateByteStream(){
     byteStream_[45] = checksum.at(1);
     encodedByteStream_ = Util::encodeByteStream(byteStream_);
     emit encodedByteStreamStrChanged();
-    emit byteStreamChangedStr();
+    emit byteStreamStrChanged();
 }
 
 QString KeyMotor::encodedByteStreamStr() const {

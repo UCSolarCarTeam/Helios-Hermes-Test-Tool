@@ -11,6 +11,7 @@
 #include "import_qml_plugins.h"
 
 #include "./SerialPortForwarder.h"
+#include "KeyMotor.h"
 #include "lights.h"
 #include "DriverControls.h"
 #include "BatteryFaults.h"
@@ -23,6 +24,9 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+    KeyMotor keyMotor;
+    engine.rootContext()->setContextProperty("keyMotor", &keyMotor);
+
     Lights lights;
     engine.rootContext()->setContextProperty("lights", &lights);
 
@@ -33,7 +37,8 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("batteryFaults", &batteryFaults);
 
     // const QUrl url(u"qrc:/qt/Serialqml/Main/main.qml"_qs);
-    const QUrl url(QStringLiteral("/home/mason/ViscommTester/main.qml"));
+//    const QUrl url(QStringLiteral("/home/mason/ViscommTester/main.qml"));
+    const QUrl url(QStringLiteral("/home/solarcar/Desktop/Helios-Hermes-Test-Tool/main.qml"));
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreated,
@@ -53,8 +58,9 @@ int main(int argc, char *argv[])
 
     QTimer timer;
     bool firstRun = true;
-    QObject::connect(&timer, &QTimer::timeout, [&forwarder, &lights, &driverControls, &batteryFaults]() {
+    QObject::connect(&timer, &QTimer::timeout, [&forwarder, &keyMotor, &lights, &driverControls, &batteryFaults]() {
 
+        forwarder.forwardData(keyMotor.encodedByteStream());
         forwarder.forwardData(lights.encodedByteStream());
         forwarder.forwardData(driverControls.encodedByteStream());
         forwarder.forwardData(batteryFaults.encodedByteStream());

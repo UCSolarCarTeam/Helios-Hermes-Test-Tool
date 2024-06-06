@@ -9,12 +9,12 @@ class KeyMotor : public QObject
 public:
     explicit KeyMotor(QObject *parent = nullptr);
 
-    Q_PROPERTY(bool m0Alive READ m0Alive NOTIFY m0AliveChanged)
-    Q_PROPERTY(int m0SetCurrent READ m0SetCurrent NOTIFY m0SetCurrentChanged)
-    Q_PROPERTY(int m0SetVelocity READ m0SetVelocity NOTIFY m0SetVelocityChanged)
-    Q_PROPERTY(int m0BusCurrent READ m0BusCurrent NOTIFY m0BusCurrentChanged)
-    Q_PROPERTY(int m0BusVoltage READ m0BusVoltage NOTIFY m0BusVoltageChanged)
-    Q_PROPERTY(int m0VehicleVelocity READ m0VehicleVelocity NOTIFY m0VehicleVelocityChanged)
+    Q_PROPERTY(bool m0Alive READ m0Alive WRITE setM0Alive NOTIFY m0AliveChanged)
+    Q_PROPERTY(int m0SetCurrent READ m0SetCurrent WRITE setM0SetCurrent NOTIFY m0SetCurrentChanged)
+    Q_PROPERTY(int m0SetVelocity READ m0SetVelocity WRITE setM0SetVelocity NOTIFY m0SetVelocityChanged)
+    Q_PROPERTY(int m0BusCurrent READ m0BusCurrent WRITE setM0BusCurrent NOTIFY m0BusCurrentChanged)
+    Q_PROPERTY(int m0BusVoltage READ m0BusVoltage WRITE setM0BusVoltage NOTIFY m0BusVoltageChanged)
+    Q_PROPERTY(int m0VehicleVelocity READ m0VehicleVelocity WRITE setM0VehicleVelocity NOTIFY m0VehicleVelocityChanged)
 
     Q_PROPERTY(bool m1Alive READ m1Alive NOTIFY m1AliveChanged)
     Q_PROPERTY(int m1SetCurrent READ m1SetCurrent NOTIFY m1SetCurrentChanged)
@@ -23,7 +23,7 @@ public:
     Q_PROPERTY(int m1BusVoltage READ m1BusVoltage NOTIFY m1BusVoltageChanged)
     Q_PROPERTY(int m1VehicleVelocity READ m1VehicleVelocity NOTIFY m1VehicleVelocityChanged)
 
-    Q_PROPERTY(QString byteStreamStr READ byteStreamStr NOTIFY byteStreamChangedStr)
+    Q_PROPERTY(QString byteStreamStr READ byteStreamStr NOTIFY byteStreamStrChanged)
     Q_PROPERTY(QString encodedByteStreamStr READ encodedByteStreamStr NOTIFY encodedByteStreamStrChanged FINAL)
 
     bool m0Alive() const;

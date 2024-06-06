@@ -3,7 +3,6 @@ import QtQuick.Controls 2.15
 import QtQuick.Studio.Components 1.0
 
 Item {
-    id: keyMotor
     width: 820
     height: 370
 
