@@ -10,6 +10,8 @@ Item {
         x: 60
         y: 87
         text: qsTr("Internal Communication")
+        checked: batteryFaults.internalCommunications;
+        onClicked: batteryFaults.setInternalCommunication(checked);
     }
 
     Switch {
@@ -17,6 +19,8 @@ Item {
         x: 60
         y: 125
         text: qsTr("Internal Conversion")
+        checked: batteryFaults.internalConversion
+        onClicked: batteryFaults.setInternalConversion(checked)
     }
 
     Switch {
@@ -24,6 +28,8 @@ Item {
         x: 60
         y: 163
         text: qsTr("Weak Cell")
+        checked: batteryFaults.weakCell
+        onClicked: batteryFaults.setWeakCell(checked)
     }
 
     Switch {
@@ -31,6 +37,8 @@ Item {
         x: 60
         y: 201
         text: qsTr("Low Cell Voltage")
+        checked: batteryFaults.lowCellVoltage
+        onClicked: batteryFaults.setLowCellVoltage(checked)
     }
 
     Switch {
@@ -38,6 +46,8 @@ Item {
         x: 60
         y: 239
         text: qsTr("Open Wiring")
+        checked: batteryFaults.openWiring
+        onClicked: batteryFaults.setOpenWiring(checked)
     }
 
     Switch {
@@ -45,6 +55,8 @@ Item {
         x: 60
         y: 277
         text: qsTr("Current Sensor")
+        checked: batteryFaults.currentSensor
+        onClicked: batteryFaults.setCurrentSensor(checked)
     }
 
     Switch {
@@ -52,6 +64,8 @@ Item {
         x: 60
         y: 315
         text: qsTr("Pack Voltage Sensor")
+        checked: batteryFaults.packVoltageSensor
+        onClicked: batteryFaults.setPackVoltageSensor(checked)
     }
 
     Switch {
@@ -59,6 +73,8 @@ Item {
         x: 286
         y: 87
         text: qsTr("Weak Pack")
+        checked: batteryFaults.weakPack
+        onClicked: batteryFaults.setWeakPack(checked)
     }
 
     Switch {
@@ -68,6 +84,8 @@ Item {
         width: 216
         height: 32
         text: qsTr("Voltage Redundancy")
+        checked: batteryFaults.voltageRedundancy
+        onClicked: batteryFaults.setVoltageRedundancy(checked)
     }
 
     Switch {
@@ -77,6 +95,8 @@ Item {
         width: 172
         height: 32
         text: qsTr("Fan Monitor")
+        checked: batteryFaults.fanMonitor
+        onClicked: batteryFaults.setFanMonitor(checked)
     }
 
     Switch {
@@ -84,6 +104,8 @@ Item {
         x: 286
         y: 201
         text: qsTr("Thermistor")
+        checked: batteryFaults.thermistor
+        onClicked: batteryFaults.setThermistor(checked)
     }
 
     Switch {
@@ -93,6 +115,8 @@ Item {
         width: 244
         height: 32
         text: qsTr("CANBUS Communications")
+        checked: batteryFaults.canbusCommunications
+        onClicked: batteryFaults.setCanbusCommunications(checked)
     }
 
     Switch {
@@ -102,6 +126,8 @@ Item {
         width: 205
         height: 32
         text: qsTr("Always-On Supply")
+        checked: batteryFaults.alwaysOnSupply
+        onClicked: batteryFaults.setAlwaysOnSupply(checked)
     }
 
     Switch {
@@ -111,6 +137,8 @@ Item {
         width: 228
         height: 32
         text: qsTr("High Voltage Isolation")
+        checked: batteryFaults.highVoltageIsolation
+        onClicked: batteryFaults.setHighVoltageIsolation(checked)
     }
 
     Switch {
@@ -120,6 +148,8 @@ Item {
         width: 198
         height: 32
         text: qsTr("12V Power Supply")
+        checked: batteryFaults.powerSupply12V
+        onClicked: batteryFaults.setPowerSupply12V(checked)
     }
 
     Switch {
@@ -129,6 +159,8 @@ Item {
         width: 249
         height: 32
         text: qsTr("Charge Limit Enforcement")
+        checked: batteryFaults.chargeLimitEnforcement
+        onClicked: batteryFaults.setChargeLimitEnforcement(checked)
     }
 
     Switch {
@@ -138,6 +170,8 @@ Item {
         width: 264
         height: 32
         text: qsTr("Discharge Limit Enforcement")
+        checked: batteryFaults.dischargeLimitEnforcement
+        onClicked: batteryFaults.setDischargeLimitEnforcement(checked)
     }
 
     Switch {
@@ -147,6 +181,8 @@ Item {
         width: 228
         height: 32
         text: qsTr("Charger Safety Relay")
+        checked: batteryFaults.chargerSafetyRelay
+        onClicked: batteryFaults.setChargerSafetyRelay(checked)
     }
 
     Switch {
@@ -156,6 +192,8 @@ Item {
         width: 244
         height: 32
         text: qsTr("Internal Memory")
+        checked: batteryFaults.internalMemory
+        onClicked: batteryFaults.setInternalMemory(checked)
     }
 
     Switch {
@@ -165,6 +203,8 @@ Item {
         width: 205
         height: 32
         text: qsTr("Internal Thermistor")
+        checked: batteryFaults.internalThermistor
+        onClicked: batteryFaults.setInternalThermistor(checked)
     }
 
     Switch {
@@ -174,6 +214,8 @@ Item {
         width: 228
         height: 32
         text: qsTr("Internal Logic")
+        checked: batteryFaults.internalLogic
+        onClicked: batteryFaults.setInternalLogic(checked)
     }
 
     Switch {
@@ -183,6 +225,8 @@ Item {
         width: 274
         height: 32
         text: qsTr("DCL Reduced Due To Low SOC")
+        checked: batteryFaults.dclSoc
+        onClicked: batteryFaults.setDclSoc(checked)
     }
 
     Switch {
@@ -192,6 +236,8 @@ Item {
         width: 341
         height: 32
         text: qsTr("DCL Reduced Due To High Cell Resistance")
+        checked: batteryFaults.dclCellResistance
+        onClicked: batteryFaults.setDclCellResistance(checked)
     }
 
     Switch {
@@ -201,6 +247,8 @@ Item {
         width: 305
         height: 32
         text: qsTr("DCL Reduced Due To Temperature")
+        checked: batteryFaults.dclTemperature
+        onClicked: batteryFaults.setDclTemperature(checked)
     }
 
     Switch {
@@ -210,6 +258,8 @@ Item {
         width: 330
         height: 32
         text: qsTr("DCL Reduced Due To Low Cell Voltage")
+        checked: batteryFaults.dclCellVoltage
+        onClicked: batteryFaults.setDclCellVoltage(checked)
     }
 
     Switch {
@@ -219,6 +269,8 @@ Item {
         width: 330
         height: 32
         text: qsTr("DCL Reduced Due To Low Pack Voltage")
+        checked: batteryFaults.dclPackVoltage
+        onClicked: batteryFaults.setDclPackVoltage(checked)
     }
 
     Switch {
@@ -228,6 +280,8 @@ Item {
         width: 375
         height: 32
         text: qsTr("DCL and CCL Reduced Due to Voltage Failsafe")
+        checked: batteryFaults.dclCclVoltage
+        onClicked: batteryFaults.setDclCclVoltage(checked)
     }
 
     Switch {
@@ -237,6 +291,8 @@ Item {
         width: 422
         height: 32
         text: qsTr("DCL and CCL Reduced Due to Communication Failsafe")
+        checked: batteryFaults.dclCclCommunication
+        onClicked: batteryFaults.setDclCclCommunication(checked)
     }
 
     Switch {
@@ -246,6 +302,8 @@ Item {
         width: 281
         height: 32
         text: qsTr("CCL Reduced Due To High SOC")
+        checked: batteryFaults.cclSoc
+        onClicked: batteryFaults.setCclSoc(checked)
     }
 
     Switch {
@@ -255,6 +313,8 @@ Item {
         width: 341
         height: 32
         text: qsTr("CCL Reduced Due to High Cell Resistance")
+        checked: batteryFaults.cclCellResistance
+        onClicked: batteryFaults.setCclCellResistance(checked)
     }
 
     Switch {
@@ -264,6 +324,8 @@ Item {
         width: 298
         height: 32
         text: qsTr("CCL Reduced Due To Temperature")
+        checked: batteryFaults.cclTemperature
+        onClicked: batteryFaults.setCclTemperature(checked)
     }
 
     Switch {
@@ -273,6 +335,8 @@ Item {
         width: 330
         height: 32
         text: qsTr("CCL Reduced Due To High Cell Voltage")
+        checked: batteryFaults.cclCellVoltage
+        onClicked: batteryFaults.setCclCellVoltage(checked)
     }
 
     Switch {
@@ -282,6 +346,8 @@ Item {
         width: 330
         height: 32
         text: qsTr("CCL Reduced Due To High Pack Voltage")
+        checked: batteryFaults.cclPackVoltage
+        onClicked: batteryFaults.setCclPackVoltage(checked)
     }
 
     Switch {
@@ -291,6 +357,8 @@ Item {
         width: 307
         height: 32
         text: qsTr("CCL Reduced Due To Charger Latch")
+        checked: batteryFaults.cclChargerLatch
+        onClicked: batteryFaults.setCclChargerLatch(checked)
     }
 
     Switch {
@@ -300,6 +368,8 @@ Item {
         width: 401
         height: 32
         text: qsTr("CCL Reduced Due To Alternate Current Limit [MPI]")
+        checked: batteryFaults.cclCurrent;
+        onClicked: batteryFaults.setCclCurrent(checked)
     }
 
     Rectangle {
@@ -355,7 +425,7 @@ Item {
         id: text3
         x: 27
         y: 709
-        text: qsTr("BYTE STREAM")
+        text: "Byte Stream: " + batteryFaults.byteStreamStr
         font.pixelSize: 16
     }
 
@@ -363,7 +433,7 @@ Item {
         id: text4
         x: 27
         y: 733
-        text: qsTr("ENCODED")
+        text: "Encoded Stream: " + batteryFaults.encodedByteStreamStr
         font.pixelSize: 16
     }
 

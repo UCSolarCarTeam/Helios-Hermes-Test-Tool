@@ -22,6 +22,8 @@ qt_add_executable(ViscommTesterApp src/main.cpp
     src/BatteryFaults.h src/BatteryFaults.cpp
     src/KeyMotor.h src/KeyMotor.cpp
     src/Battery.h src/Battery.cpp
+    src/AuxBms.h src/AuxBms.cpp
+    src/Mppt.h src/Mppt.cpp
 )
 
 qt_add_resources(ViscommTesterApp "configuration"
