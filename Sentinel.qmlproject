@@ -89,7 +89,7 @@ Project {
     importPaths: [ "imports", "asset_imports" ]
 
     /* Required for deployment */
-    targetDirectory: "/opt/ViscommTester"
+    targetDirectory: "/opt/SentinelModule"
 
     qdsVersion: "4.3"
 
