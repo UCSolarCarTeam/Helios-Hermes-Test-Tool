@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
 import QtQuick 6.2
-import ViscommTester
+import SentinelModule
 
 Window {
     width: mainScreen.width
@@ -11,10 +11,13 @@ Window {
     maximumWidth: 575
 
     visible: true
-    title: "ViscommTester"
+    title: "Sentinel"
 
     Screen01 {
         id: mainScreen
+        Text {
+            id: label
+        }
     }
 
 }
