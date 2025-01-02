@@ -8,8 +8,9 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 */
 import QtQuick
 import QtQuick.Controls
-import ViscommTester
+import SentinelModule
 import QtQuick.Studio.Components
+
 
 Item {
     id: screen
